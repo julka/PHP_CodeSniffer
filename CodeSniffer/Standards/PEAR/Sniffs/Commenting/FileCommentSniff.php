@@ -148,6 +148,14 @@ class PEAR_Sniffs_Commenting_FileCommentSniff implements PHP_CodeSniffer_Sniff
     {
         $this->currentFile = $phpcsFile;
 
+        $this->tags = array();
+        foreach ($this->order as $tag) {
+            $this->tags[$tag]['required'] = in_array($tag, $this->required);
+            $this->tags[$tag]['allow_multiple'] = !in_array($tag, $this->unique);
+            $this->tags[$tag]['order_text'] = "wrong order with $tag";
+        }
+
+
         // We are only interested if this is the first open tag.
         if ($stackPtr !== 0) {
             if ($phpcsFile->findPrevious(T_OPEN_TAG, ($stackPtr - 1)) !== false) {

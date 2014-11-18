@@ -76,6 +76,13 @@ class PEAR_Sniffs_Commenting_ClassCommentSniff extends PEAR_Sniffs_Commenting_Fi
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
+        $this->tags = array();
+        foreach ($this->order as $tag) {
+            $this->tags[$tag]['required'] = in_array($tag, $this->required);
+            $this->tags[$tag]['allow_multiple'] = !in_array($tag, $this->unique);
+            $this->tags[$tag]['order_text'] = "wrong order with $tag";
+        }
+
         $this->currentFile = $phpcsFile;
 
         $tokens    = $phpcsFile->getTokens();
