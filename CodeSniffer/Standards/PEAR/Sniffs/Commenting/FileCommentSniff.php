@@ -122,6 +122,36 @@ class PEAR_Sniffs_Commenting_FileCommentSniff implements PHP_CodeSniffer_Sniff
                                        ),
                       );
 
+    public $order = array(
+        'category',
+        'package',
+        'subpackage',
+        'author',
+        'license',
+        'version',
+        'link',
+        'see',
+        'since',
+        'deprecated'
+    );
+
+    public $required = array(
+        'category',
+        'package',
+        'author',
+        'license',
+        'link'
+    );
+
+    public $unique = array(
+        'category',
+        'package',
+        'subpackage',
+        'license',
+        'version',
+        'since',
+        'deprecated'
+    );
 
     /**
      * Returns an array of tokens this test wants to listen for.
