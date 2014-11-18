@@ -127,7 +127,7 @@ class PEAR_Sniffs_Commenting_FunctionCommentSniff implements PHP_CodeSniffer_Sni
         // function has no doc comment.
         $code = $tokens[$commentEnd]['code'];
 
-        if ($code === T_COMMENT) {
+        if ($code === T_COMMENT && !empty($tokens[$commentEnd]['content'])) {
             $error = 'You must use "/**" style comments for a function comment';
             $phpcsFile->addError($error, $stackPtr, 'WrongStyle');
             return;
