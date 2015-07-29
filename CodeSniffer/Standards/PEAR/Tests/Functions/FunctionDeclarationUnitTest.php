@@ -38,7 +38,7 @@ class PEAR_Tests_Functions_FunctionDeclarationUnitTest extends AbstractSniffUnit
      * The key of the array should represent the line number and the value
      * should represent the number of errors that should occur on that line.
      *
-     * @return array(int => int)
+     * @return array<int, int>
      */
     public function getErrorList()
     {
@@ -55,10 +55,18 @@ class PEAR_Tests_Functions_FunctionDeclarationUnitTest extends AbstractSniffUnit
                 44  => 1,
                 51  => 1,
                 61  => 2,
-                86  => 1,
-                98  => 2,
-                108 => 1,
-                109 => 1,
+                98  => 1,
+                110 => 2,
+                120 => 3,
+                121 => 1,
+                140 => 1,
+                145 => 1,
+                161 => 2,
+                162 => 2,
+                164 => 2,
+                167 => 2,
+                171 => 1,
+                173 => 1,
                );
 
     }//end getErrorList()
@@ -70,7 +78,7 @@ class PEAR_Tests_Functions_FunctionDeclarationUnitTest extends AbstractSniffUnit
      * The key of the array should represent the line number and the value
      * should represent the number of warnings that should occur on that line.
      *
-     * @return array(int => int)
+     * @return array<int, int>
      */
     public function getWarningList()
     {
@@ -80,5 +88,3 @@ class PEAR_Tests_Functions_FunctionDeclarationUnitTest extends AbstractSniffUnit
 
 
 }//end class
-
-?>

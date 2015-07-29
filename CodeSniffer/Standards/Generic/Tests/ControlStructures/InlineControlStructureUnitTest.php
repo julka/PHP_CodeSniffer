@@ -40,7 +40,7 @@ class Generic_Tests_ControlStructures_InlineControlStructureUnitTest extends Abs
      *
      * @param string $testFile The name of the file being tested.
      *
-     * @return array(int => int)
+     * @return array<int, int>
      */
     public function getErrorList($testFile='InlineControlStructureUnitTest.inc')
     {
@@ -54,6 +54,14 @@ class Generic_Tests_ControlStructures_InlineControlStructureUnitTest extends Abs
                     15 => 1,
                     17 => 1,
                     23 => 1,
+                    42 => 1,
+                    43 => 1,
+                    45 => 1,
+                    46 => 1,
+                    49 => 1,
+                    62 => 1,
+                    66 => 1,
+                    78 => 1,
                    );
             break;
         case 'InlineControlStructureUnitTest.js':
@@ -79,7 +87,7 @@ class Generic_Tests_ControlStructures_InlineControlStructureUnitTest extends Abs
      * The key of the array should represent the line number and the value
      * should represent the number of warnings that should occur on that line.
      *
-     * @return array(int => int)
+     * @return array<int, int>
      */
     public function getWarningList()
     {

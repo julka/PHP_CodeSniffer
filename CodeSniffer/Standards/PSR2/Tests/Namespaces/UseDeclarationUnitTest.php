@@ -38,7 +38,7 @@ class PSR2_Tests_Namespaces_UseDeclarationUnitTest extends AbstractSniffUnitTest
      *
      * @param string $testFile The name of the file being tested.
      *
-     * @return array(int => int)
+     * @return array<int, int>
      */
     public function getErrorList($testFile='')
     {
@@ -48,19 +48,21 @@ class PSR2_Tests_Namespaces_UseDeclarationUnitTest extends AbstractSniffUnitTest
             // and will throw errors in earlier versions.
             if (version_compare(PHP_VERSION, '5.4.0') < 0) {
                 return array(
-                        30  => 2,
+                        30 => 2,
                        );
             }
 
             return array();
         case 'UseDeclarationUnitTest.2.inc':
             return array(
+                    4  => 1,
                     5  => 1,
                     10 => 2,
                    );
         case 'UseDeclarationUnitTest.3.inc':
             return array(
-                    5  => 1,
+                    4 => 1,
+                    6 => 1,
                    );
         default:
             return array();
@@ -75,7 +77,7 @@ class PSR2_Tests_Namespaces_UseDeclarationUnitTest extends AbstractSniffUnitTest
      * The key of the array should represent the line number and the value
      * should represent the number of warnings that should occur on that line.
      *
-     * @return array(int => int)
+     * @return array<int, int>
      */
     public function getWarningList()
     {

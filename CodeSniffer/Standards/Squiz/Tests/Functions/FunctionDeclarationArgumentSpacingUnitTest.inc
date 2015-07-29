@@ -53,7 +53,11 @@ function myFunc( $blah ) {}
 function myFunc(  $blah  ) {}
 function myFunc( array $blah ) {}
 function myFunc(array $blah ) {}
+function myFunc(  array $blah ) {}
 function myFunc() {}
 function myFunc( ) {}
 // @codingStandardsChangeSetting Squiz.Functions.FunctionDeclarationArgumentSpacing requiredSpacesAfterOpen 0
 // @codingStandardsChangeSetting Squiz.Functions.FunctionDeclarationArgumentSpacing requiredSpacesBeforeClose 0
+
+function myFunc($req, $opt=null, ...$params) {}
+function myFunc($param, &...$moreParams) {}
